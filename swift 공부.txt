@@ -225,7 +225,45 @@ print(s, t)
 			//값이 없다면 if문의 조건이 거짓이 되어 if문을 실행하지 않음
 		}
 
+- 여러 옵셔널을 언래핑
+	▪ 여러 옵셔널 변수를 한번에 언래핑하는 방법은 콤마(,) 사용
+		var pet1: String?
+		var pet2: String?
+		pet1 = "cat"
+		pet2 = "dog"
+		if let firstPet = pet1, let secondPet = pet2 {
+			print(firstPet, secondPet)
+		} else {
+			print("nil")
+		}
 
+- 두 가지 옵셔널 타입
+	▪ 옵셔널이 항상 유효한 값을 가질 경우 옵셔널이 암묵적인 언래핑(implicitly unwrapping)이 되도록 선언할 수도 있음
+	▪ 클래스의 아웃렛 변수 초기화에서 많이 사용(자동 생성되는 코드)
+	▪ 이러한 방법으로 옵셔널이 선언된다면 강제 언래핑이나 옵셔널 바인딩을 하지 않아도 값에 접근할 수 있음
+	▪ 암묵적인 언래핑으로 옵셔널을 선언하기 위해서는 선언부에 물음표(?) 대신에 느낌표(!)를 사용
+		- var x : Int? //옵셔널 변수 선언방법 1
+		- var y : Int! //옵셔널 변수 선언방법 2
+	▪ https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
+		- You can think of an implicitly unwrapped optional as giving permission for the optional to be force-unwrapped if needed. When you use an implicitly unwrapped optional value, Swift first tries to use it as an ordinary optional value; if it can’t be used as an optional, Swift force-unwraps the value.
+
+- Int!형을 property로 갖는 클래스
+	class MyAge {
+		var age : Int!
+		init(age: Int) {
+			self.age = age
+		}
+		func printAge() {
+			print(age) //optional(1)
+			print(age+1) //2, age! + 1 라고 쓰지 않아도 됨
+			let age1 : Int = age
+			print(age1) //1
+			let age2 = age + 2
+			print(age2) //3
+		}
+	}
+	var han = MyAge(age:1)
+	han.printAge()
 
 
 
