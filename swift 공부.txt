@@ -265,7 +265,84 @@ print(s, t)
 	var han = MyAge(age:1)
 	han.printAge()
 
+- 옵셔널을 사용하는 이유
+	▪ 옵셔널 타입만이 값을 갖지 않는다는 의미의 nil 값을 가질 수 있음
+	▪ You set an optional variable to a valueless state by assigning it the special value nil.
+	▪ nil 값을 옵셔널이 아닌 변수나 상수에 할당할 수 없음
+		- var myInt = nil // error
+		- var myInt : Int? = nil // ok
+		- var myInt : Int? // ok, 위와 같은 코드
+			- 옵셔널 변수는 초기화하지 않으며 자동으로 nil로 초기화
+		- var mystring : String = nil // 유효하지 않은 코드
+		- let myConstant = nil // 유효하지 않은 코드
 
+- nil
+	 ▪ 옵셔널 변수에 nil을 할당하면 값이 없는 상태가 된다.
+		- var serverResponseCode: Int? = 404
+		- // serverResponseCode contains an actual Int value of 404
+		- serverResponseCode = nil
+		- // serverResponseCode now contains no value
+	▪ nil cannot be used with nonoptional constants and variables. If a constant or variable in your code needs to work with the absence of a value under certain conditions, always declare it as an optional value of the appropriate type.
+	▪ 상수나 변수가 값이 없는 상태가 존재한다면 옵셔널 타입으로 선언해야 한다.
+
+- 옵셔널 변수와 nil
+	▪ If you define an optional variable without providing a default value, the variable is automatically set to nil for you:
+	▪ 옵셔널 변수에 초깃값을 할당하지 않으면 자동으로 nil이 할당됨
+		- var surveyAnswer: String?
+		- // surveyAnswer is automatically set to nil
+	▪ Swift's nil is not the same as nil in Objective-C.
+	▪ In Objective-C, nil is a pointer to a nonexistent object.
+	▪ In Swift, nil is not a pointer-it is the absence of a value of a certain type. Optionals of any type can be set to nil, not just object types.
+
+- 옵셔널은 연관 값(associated value)을 갖는 enum
+	▪ 열거형에서 설명함
+		public enum Optional<Wrapped> {
+			case none
+			case some(Wrapped)
+		}
+		var x : Int? = 20 //.some(20)
+		var y : Int? = Optional.some(10)
+		var z : Int? = Optional.none
+		var x1 : Optional<Int> = 30
+		print(x, y, z, x1)
+
+- If Statements and Forced Unwrapping
+	▪ You can use an if statement to find out whether an optional contains a value by comparing the optional against nil. You perform this comparison with the "equal to" operator (==) or the "not equal to" operator (!=).
+	▪ If an optional has a value, it is considered to be "not equal to" nil:
+		if convertedNumber != nil {
+			print("convertedNumber contains some integer value.")
+		}
+		// prints "convertedNumber contains some integer value."
+	▪ Once you're sure that the optional does contain a value, you can access its underlying value by adding an exclamation mark (!) to the end of the optional's name. The exclamation mark effectively says, "I know that this optional definitely has a value; please use it." This is known as forced unwrapping of the optional's value:
+		if convertedNumber != nil {
+			print("convertedNumber has an integer value of \(convertedNumber!).")
+		}
+		// prints "convertedNumber has an integer value of 123."
+	▪ 반드시 if문으로 nil이 아닌지 확인한 후 !를 이용하여 값에 접근함
+
+- Optional Binding
+	▪ You use optional binding to find out whether an optional contains a value, and if so, to make that value available as a temporary constant or variable.
+		- optional binding은 옵셔널이 값을 가져 상수나 변수로 가능한지 찾는 것
+	▪ Optional binding can be used with if and while statements to check for a variable, as part of a single action.
+	▪ Write an optional binding for an if statement as follows:
+		if let constantName = someOptional {
+			statements
+		}
+	▪ You can rewrite the possibleNumber example from the Optionals section to use optional binding rather than forced unwrapping:
+		let possibleNumber = "123"
+		if let actualNumber = Int(possibleNumber) {
+			print("\'\(possibleNumber)\' has an integer value of \(actualNumber)")
+		} else {
+			print("\'\(possibleNumber)\' could not be converted to an integer")
+		}
+		// prints "'123' has an integer value of 123"
+	▪ This code can be read as:
+		- "If the optional Int returned by Int(possibleNumber) contains a value, set a new constant called actualNumber to the value contained in the optional."
+		- Int(possibleNumber)로 리턴된 옵셔널 Int가 값을 가지면 actualNumber에 할당
+	▪ If the conversion is successful, the actualNumber constant becomes available for use within the first branch of the if statement. It has already been initialized with the value contained within the optional, and so there is no need to use the ! suffix to access its value.
+	▪ In this example, actualNumber is simply used to print the result of the conversion.
+	▪ You can use both constants and variables with optional binding.
+	▪ If you wanted to manipulate the value of actualNumber within the first branch of the if statement, you could write if var actualNumber instead, and the value contained within the would be made available as a variable rather than constant. 
 
 
 
