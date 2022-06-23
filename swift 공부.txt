@@ -344,7 +344,33 @@ print(s, t)
 	▪ You can use both constants and variables with optional binding.
 	▪ If you wanted to manipulate the value of actualNumber within the first branch of the if statement, you could write if var actualNumber instead, and the value contained within the would be made available as a variable rather than constant. 
 
+- 클래스, 객체, 인스턴스
+	▪ When an object is created by a constructor of the class, the resulting object is called an instance of the class.
+	▪ 클래스로부터 만들어진 객체를 인스턴스라 한다.
 
+- 형 변환(as로 upcasting)
+	▪ 상속 관계가 있는 클래스들끼리만 타입 캐스팅 가능
+	▪ 자식(부모로부터 상속받아 더 많은 것을 가지고 있음) 인스턴스를 부모로 캐스팅하는 것은 문제가 없음
+	▪ as 연산자를 이용한 타입 변환(type casting)
+		- 자식인스턴스 as 부모클래스 // upcasting 안전한 캐스팅. 자식이 추상화됨
+		- 업캐스팅은 객체를 부모 클래스의 객체로 형 변환
+		- 형 변환은 성공할 것이기 때문에 보장된 변환(guaranteed conversion)
+		- UIButton은 UIControl의 자식 클래스이므로 안전하게 형 변환
+		- let myButton: UIButton = UIButton()
+		- let myControl = myButton as UIControl // 자식인스턴스 as 부모 클래스
+		- 자식인스턴스인 myButton을 부모 클래스형으로 형 변환
+
+- 형 변환(as! as?로 downcasting)
+	▪ 다운캐스팅은 부모 인스턴스를 자식 클래스로 변환하는 데 사용
+	▪ 성공 확신이 있으면 as! 키워드를 사용하며 강제 변환(forced conversion)
+		- 변환이 안되면 crash
+	▪ 성공 확신이 없으면 as?를 사용하여 안전하게 변환
+		- 변환이 안되면 nil을 리턴하므로 옵셔널 타입으로 변환함
+	▪ 부모인스턴스 as! 자식클래스 // downcasting 일반 타입으로 반환
+					  // 다운캐스팅이 반드시 성공할 것이라는 확신이 있을 때
+	▪ 부모인스턴스 as? 자식클래스 // downcasting 옵셔널 타입으로 반환. 확신이 없을 경우
+	▪ https://docs.swift.org/swift-book/LanguageGuide/TypeCasting.html
+	▪ https://www.youtube.com/watch?v=XGgaCHNH3AE
 
 
 
