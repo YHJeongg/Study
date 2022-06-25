@@ -660,6 +660,17 @@ print(s, t)
 			print("홀수입니다")
 		} // 홀수입니다
 
+- 다중 if-else문
+	▪ 다양한 조건을 바탕으로 결정해야 할 때 다중 if-else구문을 사용
+		var num = 3
+		if (num == 1 || num == 3) {
+			print("당신은 남성입니다!\n")
+		} else if (num == 2 || num == 4) {
+			print("당신은 여성입니다!\n")
+		} else {
+			print("당신은 대한민국 사람이 아닙니다!\n")
+		}	
+
 
 
 
