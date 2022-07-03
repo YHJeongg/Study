@@ -946,3 +946,36 @@ print(s, t)
 		- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 	▪ tableView(_:numberOfRowsInSection:)
 		- func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+
+- 클로저 표현식
+	▪ https://en.wikipedia.org/wiki/Closure_(computer_programming)
+	▪ C, C++, Objective-C의 block
+	▪ Java의 Lambda function
+	▪ C#의 Delegates
+	▪ 클로저 표현식은 독립적인 코드 블록
+		func add(x: Int, y: Int) -> Int {
+			return(x+y)
+		}
+		print(add(x:10, y:20))
+
+		let add1 = {(x: Int, y: Int) -> Int in
+			return(x+y)
+		}
+		print(add1(10, 20))
+
+	▪ 클로저 표현식은 매개변수를 받거나, 값을 반환하도록 만들 수도 있음
+		{(<매개변수 이름>: <매개변수 타입>, ...) -> <반환 타입> in
+			// 클로저 표현식 코드
+		}
+	▪ 클로저 표현식을 선언하고 상수에 할당한 다음, 함수를 호출
+		let sayHello = { print("Hello") }
+		sayHello() // 상수를 함수처럼 호출
+	▪ 두 개의 정수 매개변수를 받아서 정수 결과 값을 반환
+		let multiply = {(val1: Int, val2: Int) -> Int in
+			return val1 * val2
+		} // 여기서 multiply의 자료형은 (Int, Int) -> Int
+		let result = multiply(10, 20) // 상수를 함수처럼 호출
+
+- 후행 클로저(trailing closure)
+	▪ 클로저가 함수의 마지막 argument라면 마지막 매개변수 이름(handler:)을 생략한 후 함수 소괄호 외부에 클로저를 구현
+	▪ https://developer.apple.com/documentation/uikit/uialertaction/1620097-init 
