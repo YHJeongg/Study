@@ -994,6 +994,42 @@ print(s, t)
 	▪ 청사진이나 설계사의 그림이 건물이 완성된 후의 모습을 나타내고 있는 것처럼 클래스(class)는 객체가 생성되었을 때 어떠한 모습을 보일 것인지를 정의
 	▪ 메서드는 어떠한 일을 하고 어떠한 속성이 있는지 등을 정의
 	▪ int x;
-	▪ Student has;
+	▪ Student han;
 	▪ 클래스 인스턴스;
-		
+
+- 스위프트에서 클래스 선언하기
+	▪ 클래스의 기본 구조는 다음과 같다.
+		class 새로운 클래스 이름: 부모 클래스 {
+			// 프로퍼티
+			// 인스턴스 메서드
+			// 타입(type) 메서드(클래스 메서드)
+		}
+	▪ "프로퍼티" 부분은 클래스 내에 포함되는 변수(var)와 상수(let)를 정의한다.
+	▪ "인스턴스 메서드"는 객체가 호출하는 메서드를 정의한다.
+	▪ "타입 메서드"는 클래스가 호출하는 메서드를 정의한다.
+	▪ 프로퍼티(property)
+		- https://docs.swift.org/swift-book/LanguageGuide/Properties.html
+
+- 클래스에 property 추가하기
+	▪ 프로퍼티는
+		- 초기값이 있거나
+		- init을 이용해서 초기화하거나
+		- 옵셔널 변수(상수)로 선언
+	▪ property는 저장 프로퍼티(stored property)과 계산 프로퍼티(computed property)
+	▪ age, weight는 stored property
+		class Man {
+			var age: Int
+			var weight: Double
+		} // 프로퍼티에 초기값이 없어서 error
+
+- 메서드
+	▪ https://docs.swift.org/swift-book/LanguageGuide/Methods.html
+	▪ 인스턴스(instance) 메서드, 클래스 또는 타입(class or type)메서드
+	▪ 인스턴스 메서드는 인스턴스에서 동작
+		class Man {
+			var age: Int = 1
+			var weight: Double = 3.5
+			func display() { // 인스턴스 메서드
+				print("나이=\(age), 몸무게=\(weight)")
+			}
+		}
