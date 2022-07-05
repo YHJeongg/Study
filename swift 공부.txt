@@ -979,3 +979,21 @@ print(s, t)
 - 후행 클로저(trailing closure)
 	▪ 클로저가 함수의 마지막 argument라면 마지막 매개변수 이름(handler:)을 생략한 후 함수 소괄호 외부에 클로저를 구현
 	▪ https://developer.apple.com/documentation/uikit/uialertaction/1620097-init 
+
+- 객체 인스턴스
+	▪ 인스턴스(instance)
+		- 실제로 메모리에 할당된 객체(object)
+		- https://en.wikipedia.org/wiki/Instance_(computer_science)
+		- In object-oriented programming (OOP), an instance is a concrete(실체가 있는) occurrence of any object, existing usually during the runtime of a computer program. Formally, "instance" is synonymous with "object" as they are each a particular value (realization), and these may be called an instance object; "instance" emphasizes the distinct identity(분명한 정체성) of the object. The creation of an instance is called instantiation.
+	▪ 소프트웨어 애플리케이션을 개발하는 데 사용되는, 쉽게 사용할 수 있으며 재사용할 수 있는 기능을 가진 모듈
+	▪ 객체의 구성
+		- 데이터 변수(data variable) or 속성(property)
+		- 함수 or 메서드(method)
+
+- 클래스란 무엇인가?
+	▪ 청사진이나 설계사의 그림이 건물이 완성된 후의 모습을 나타내고 있는 것처럼 클래스(class)는 객체가 생성되었을 때 어떠한 모습을 보일 것인지를 정의
+	▪ 메서드는 어떠한 일을 하고 어떠한 속성이 있는지 등을 정의
+	▪ int x;
+	▪ Student has;
+	▪ 클래스 인스턴스;
+		
