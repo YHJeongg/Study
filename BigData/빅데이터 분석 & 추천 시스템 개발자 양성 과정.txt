@@ -1,0 +1,27 @@
+빅데이터 분석 & 추천 시스템 개발자 양성 과정
+
+- 기본 자료형(Data Type)과 객체 자료형
+	기본 자료형(Primitive)
+		Java 언어에 이미 존재하고 있는 Data Type
+		간단한 Data들의 형태
+		ex: int, double, char, ......
+
+	객체 자료형(Object)
+		여러가지 Data들이 모여있는 복잡한 Data Type
+		기본 자료형에 비해 크기가 크다
+		ex: String, System, ArrayList, ......
+
+- 협업 Tool
+	Google docs
+	Slack
+	Figma
+	Notion
+	Miro
+	Github
+
+- 제어문과 반복문
+	제어문(Control)
+		상황을 판단하여 true일 경우와 false일 경우를 판별하는 문장 (ex: if, ....)
+	반복문(Loop)
+		상황을 판단하여 true일 동일한 작업을 반복
+		상황이 false일 경우 동일한 작업에서 빠져나감
