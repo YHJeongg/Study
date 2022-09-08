@@ -11,9 +11,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("몸무게(kg)를 입력하세요 : ");
-		inputWeightKg = sc.nextInt();
+		inputWeightKg = sc.nextDouble();
 		System.out.print("키(cm)를 입력하세요 : ");
-		inputStatureCm = sc.nextInt();
+		inputStatureCm = sc.nextDouble();
 		
 		statureMeter = inputStatureCm / 100;
 		bmi = inputWeightKg / (statureMeter * statureMeter);
